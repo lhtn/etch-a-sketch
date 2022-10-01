@@ -1,1 +1,1 @@
-# etch-a-sketch
+This is the Etch-A-Sketch program from the Odin Project.
