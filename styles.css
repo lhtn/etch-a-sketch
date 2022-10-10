@@ -1,6 +1,11 @@
+.container {
+    max-width: 960px;
+    max-height: 960px;
+    border: 2px solid grey;
+}
+
 .grid-container {
     display: grid;
-    max-width: 960px;
 }
 
 .square {
