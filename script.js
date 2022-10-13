@@ -1,8 +1,9 @@
 const gridContainer = document.querySelector(".grid-container");
-const defaultColors = document.getElementById("default-colors");
-const changeOriginalGrid = document.querySelector(".grid-container");
-const randomColors = document.getElementById("random-colors");
+const originalGridColor = document.querySelector(".grid-container");
+const changeToDefault = document.getElementById("default-color");
+const changeToRandom = document.getElementById("random-color");
 const makeNewGrid = document.getElementById("new-grid");
+const eraser = document.getElementById("eraser");
 
 
 // makes a grid
@@ -20,25 +21,35 @@ function makeGrid(gridNumber) {
 makeGrid(16);
 
 
-// modify color of square between light and dark grey when mouse is moved over the grid
-changeOriginalGrid.addEventListener("mouseover", function (event) {
+// modify color of square to dark grey when mouse is moved over the grid
+originalGridColor.addEventListener("mouseover", function (event) {
     event.target.style.backgroundColor = "darkgrey";
 });
 
 
-defaultColors.addEventListener("click", function (event) {
-    let defaultCol = document.querySelector(".grid-container");
-    defaultCol.addEventListener("mouseover", function (event) {
+// modify color of square from color to dark grey when mouse is moved over the grid
+changeToDefault.addEventListener("click", function (event) {
+    let defaultColor = document.querySelector(".grid-container");
+    defaultColor.addEventListener("mouseover", function (event) {
         event.target.style.backgroundColor = "darkgrey";
     })
 });
 
 
 // modify color of square by random color when mouse is moved over the grid
-randomColors.addEventListener("click", function (event) {
-    let random = document.querySelector(".grid-container");
-    random.addEventListener("mouseover", function (event) {
+changeToRandom.addEventListener("click", function (event) {
+    let randomCol = document.querySelector(".grid-container");
+    randomCol.addEventListener("mouseover", function (event) {
         event.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    })
+})
+
+
+// erase color of square to light grey
+eraser.addEventListener("click", function (event) {
+    let eraseSquare = document.querySelector(".grid-container");
+    eraseSquare.addEventListener("mouseover", function (event) {
+        event.target.style.backgroundColor = "lightgrey";
     })
 })
 

@@ -1,4 +1,13 @@
+h1 {
+    text-align: center;
+}
+
+#buttons {
+    text-align: center;
+}
+
 .container {
+    margin: auto;
     max-width: 800px;
     border: 2px solid grey;
 }
